@@ -7,11 +7,10 @@ My all-in-one student productivity tool!
 - Phase 1 (2–3 weeks):
     - User auth + dashboard
     - Task manager (CRUD + due dates)
+    - Customizable Pomodoro timer
+- Phase 2 (3–4 weeks):
     - Notes with markdown support
-    - Manual flashcard creator + spaced repetition logic
-- Phase 2 (2–3 weeks):
-    - Smart scheduler MVP (basic calendar + time block suggestions)
+    - Google Calendar integration
     - AI flashcard generator (summarize note -> question/answer)
 - Phase 3 (1–2 weeks):
-    - Daily focus UI
     - Progress tracker (tasks done, time studied, cards reviewed)
