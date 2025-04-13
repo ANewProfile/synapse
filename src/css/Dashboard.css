@@ -1,0 +1,15 @@
+.home {
+    padding: 2rem 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 639px) {
+    .home {
+        padding: 1rem 0;
+    }
+
+    .search-form {
+        margin-bottom: 1rem;
+    }
+}
