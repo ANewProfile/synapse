@@ -16,7 +16,7 @@ function App() {
                     <Route path="/signup" element={<Signup />} />
                     <Route
                         path="/logout"
-                        element={<p>LOGIN NOT IMPLEMENTED</p>}
+                        element={<p>LOGOUT NOT IMPLEMENTED</p>}
                     />
                 </Routes>
             </main>

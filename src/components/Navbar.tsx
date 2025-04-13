@@ -3,15 +3,15 @@ import "../css/Navbar.css";
 
 function Navbar() {
     return (
-        <nav className="bg-black px-4 py-3 d-flex justify-content-between align-items-center shadow-sm">
-            <div className="fs-3 fw-bold">
+        <nav className="custom-navbar">
+            <div className="custom-navbar-brand">
                 <Link to="/">Logo Here</Link>
             </div>
-            <div className="d-flex gap-4">
-                <Link to="/" className="nav-link">
+            <div className="custom-navbar-links">
+                <Link to="/" className="custom-nav-link">
                     Dashboard
                 </Link>
-                <Link to="/logout" className="nav-link">
+                <Link to="/logout" className="custom-nav-link">
                     Log Out
                 </Link>
             </div>
