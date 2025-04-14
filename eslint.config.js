@@ -12,7 +12,7 @@ export default defineConfig([
     pluginReact.configs.flat.recommended,
     {
         settings: {
-            react: { version: "detect" },
+            react: { version: "detect", runtime: "automatic" },
         },
         // Override rules from the above configs
         rules: {
