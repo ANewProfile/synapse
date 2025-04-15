@@ -11,7 +11,7 @@ function Login() {
                         aria-describedby="emailHelp"
                     />
                     <div id="emailHelp" className="form-text">
-                        We'll never share your email with anyone else.
+                        We&aposll never share your email with anyone else.
                     </div>
                 </div>
                 <div className="mb-3">
