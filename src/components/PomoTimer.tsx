@@ -37,11 +37,20 @@ function PomoTimer() {
     }
 
     return (
-        <div>
-            <h1>{isWork ? "Focus" : "Break"}</h1>
+        <div
+            className="d-flex flex-column justify-content-center align-items-center text-center"
+            style={{ height: "100%" }}
+        >
+            <h1 className="mb-2">{isWork ? "Work" : "Break"}</h1>
             <div style={{ fontSize: "4rem" }}>{format(secondsLeft)}</div>
-            <button onClick={startPause}>{isRunning ? "Pause" : "Play"}</button>
-            <button onClick={reset}>Reset</button>
+            <div className="mt-3">
+                <button onClick={startPause} className="btn btn-primary me-3">
+                    {isRunning ? "Pause" : "Play"}
+                </button>
+                <button onClick={reset} className="btn btn-secondary">
+                    Reset
+                </button>
+            </div>
         </div>
     );
 }
