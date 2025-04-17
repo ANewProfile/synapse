@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import TestPomo from "./pages/TestPomo";
 import { Routes, Route } from "react-router-dom";
 import "./css/App.css";
 
@@ -18,6 +19,7 @@ function App() {
                         path="/logout"
                         element={<p>LOGOUT NOT IMPLEMENTED</p>}
                     />
+                    <Route path="/testpomo" element={<TestPomo />} />
                 </Routes>
             </main>
         </div>
