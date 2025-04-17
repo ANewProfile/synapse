@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
 
-function PomoTimer() {
-    const [secondsLeft, setSecondsLeft] = useState(1500); // Set default secondsLeft to 25 min
+interface PomoTimerProps {
+    workTime?: number;
+    breakTime?: number;
+}
+
+function PomoTimer({ workTime = 1500, breakTime = 300 }: PomoTimerProps) {
+    const [secondsLeft, setSecondsLeft] = useState(workTime); // Set default secondsLeft to 25 min
     const [isRunning, setIsRunning] = useState(false); // Set default isRunning to false
     const [isWork, setIsWork] = useState(true); // Set default isWork to true
 
@@ -15,7 +20,7 @@ function PomoTimer() {
                     // switch mode
                     const nextIsWork = !isWork && true;
                     setIsWork(nextIsWork);
-                    return nextIsWork ? 1500 : 300; // set the next seconds left to 25 min if work next, 5 min if break next
+                    return nextIsWork ? workTime : breakTime; // set the next seconds left to 25 min if work next, 5 min if break next
                 }
                 return sec - 1; // if the timer isn't done, return the next secondsLeft
             });
@@ -27,7 +32,7 @@ function PomoTimer() {
     const reset = () => {
         setIsRunning(false);
         setIsWork(true);
-        setSecondsLeft(1500);
+        setSecondsLeft(workTime);
     };
 
     function format(sec: number) {
