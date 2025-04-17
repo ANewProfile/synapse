@@ -5,6 +5,7 @@ import Signup from "./pages/Signup";
 import TestPomo from "./pages/TestPomo";
 import { Routes, Route } from "react-router-dom";
 import "./css/App.css";
+import PomoTimerPage from "./pages/PomoTimerPage";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                         element={<p>LOGOUT NOT IMPLEMENTED</p>}
                     />
                     <Route path="/testpomo" element={<TestPomo />} />
+                    <Route path="/pomodoro" element={<PomoTimerPage />} />
                 </Routes>
             </main>
         </div>
