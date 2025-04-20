@@ -4,49 +4,51 @@ import { useState, useEffect } from "react";
 function PomoTimerPage() {
     const [workTime, setWorkTime] = useState(1500);
     const [breakTime, setBreakTime] = useState(300);
-    const [newWorkTime, setNewWorkTime] = useState(15);
-    const [newBreakTime, setNewBreakTime] = useState(3);
+    const [newWorkTime, setNewWorkTime] = useState(25);
+    const [newBreakTime, setNewBreakTime] = useState(5);
 
-    const handleWorkTimeSubmit = () => {
-        setWorkTime(newWorkTime);
-        setBreakTime(newBreakTime);
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        setWorkTime(newWorkTime * 60);
+        setBreakTime(newBreakTime * 60);
     };
 
+    useEffect(() => {
+        setWorkTime(newWorkTime);
+        setBreakTime(newBreakTime);
+    }, []);
+
     return (
-        <div className="d-flex flex-column justify-content-center align-items-center">
-            <form onSubmit={handleWorkTimeSubmit}>
-                <label>Work Time</label>
-                <div className="input-group mb-3">
+        <div className="d-flex flex-column justify-content-center align-items-center gap-5">
+            <form
+                onSubmit={handleSubmit}
+                className="row g-2 align-items-end mb-4"
+            >
+                <div className="col-auto">
+                    <label>Work Time</label>
                     <input
                         type="text"
                         className="form-control"
-                        placeholder="MM"
                         aria-label="Minutes"
+                        value={newWorkTime}
+                        onChange={(e) => setNewWorkTime(+e.target.value)}
                     />
-                    <input
-                        type="text"
-                        className="form-control"
-                        placeholder="SS"
-                        aria-label="Seconds"
-                    />
-                    <button className="btn btn-primary">Submit</button>
                 </div>
 
-                <label>Break Time</label>
-                <div className="input-group mb-3">
+                <div className="col-auto">
+                    <label>Break Time</label>
                     <input
                         type="text"
                         className="form-control"
-                        placeholder="MM"
                         aria-label="Minutes"
+                        value={newBreakTime}
+                        onChange={(e) => setNewBreakTime(+e.target.value)}
                     />
-                    <input
-                        type="text"
-                        className="form-control"
-                        placeholder="SS"
-                        aria-label="Seconds"
-                    />
-                    <button className="btn btn-primary">Submit</button>
+                </div>
+                <div className="col-auto">
+                    <button type="submit" className="btn btn-primary">
+                        Update
+                    </button>
                 </div>
             </form>
 
