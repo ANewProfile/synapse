@@ -24,5 +24,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Switch to client folder
+        run: cd client
+
       - name: Run ESLint
         run: npx eslint . # Lint all files in the repository
+
+      - name: Switch back to root dir
+        run: cd -
