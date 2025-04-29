@@ -3,7 +3,7 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import PomoTimerPage from "./pages/PomoTimerPage";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "./css/App.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -25,13 +25,15 @@ function App() {
       });
   }, []);
 
-  if (user) {
+  //navigate dont work outside routes huh
+  /** 
+  if (!user) {
     return (
-      <div className="d-flex flex-column" style={{ height: "120vh" }}>
-        <Navbar /> <Signup />
-      </div>
+      <>
+        <Navigate to="/signup" replace />
+      </>
     );
-  }
+  }*/
   return (
     <div className="d-flex flex-column" style={{ height: "120vh" }}>
       <Navbar />{" "}
@@ -39,7 +41,10 @@ function App() {
       <main className="main-content flex-grow-1 d-flex flex-column">
         {/**this part needs to be responsive on phone max col for grid 2  */}
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route
+            path="/"
+            element={user ? <Dashboard /> : <Navigate to="/login" />}
+          />
           <Route path="/pomodoro" element={<PomoTimerPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
