@@ -1,3 +1,42 @@
+.dashboard-card {
+    padding: 1rem;
+    background-color: #2d2d2d;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
 .w-12-5 {
-    width: 12.5%;
+    flex: 1 0 calc(12.5% - 0.5rem);
+    max-width: calc(12.5% - 0.5rem);
+}
+
+.w-25 {
+    flex: 1 0 calc(25% - 0.5rem);
+    max-width: calc(25% - 0.5rem);
+}
+
+.w-33-33 {
+    flex: 1 0 calc(33.33% - 0.67rem);
+    max-width: calc(33.33% - 0.67rem);
+}
+
+.w-50 {
+    flex: 1 0 calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
+}
+
+.w-66-66 {
+    flex: 1 0 calc(66.66% - 0.33rem);
+    max-width: calc(66.66% - 0.33rem);
+}
+
+.w-75 {
+    flex: 1 0 calc(75% - 0.25rem);
+    max-width: calc(75% - 0.25rem);
 }
