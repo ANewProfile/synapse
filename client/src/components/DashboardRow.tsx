@@ -7,7 +7,7 @@ interface DashboardRowProps {
 
 function DashboardRow({ children, className = "" }: DashboardRowProps) {
     return (
-        <div className={`d-flex flex-row gap-2 ${className}`}>{children}</div>
+        <div className={`dashboard-row ${className}`}>{children}</div>
     );
 }
 

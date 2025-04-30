@@ -5,14 +5,15 @@ import "../css/Dashboard.css";
 
 function Dashboard() {
     return (
-        <div className="dashboard d-flex flex-column h-100 gap-4">
-            <DashboardRow className="h-50">
-                <DashboardCard width={75}>Quick Note</DashboardCard>
-                <DashboardCard width={"12-5"}>Calendar</DashboardCard>
-                <DashboardCard width={"12-5"}>Motivation</DashboardCard>
+        <div className="dashboard">
+            <DashboardRow>
+                <DashboardCard width={66.66}>Quick Note</DashboardCard>
+                <DashboardCard width={33.33}>Calendar</DashboardCard>
             </DashboardRow>
-            <DashboardRow className="h-50">
-                <DashboardCard width={25}>
+            <DashboardRow>
+                <DashboardCard width={33.33}>Motivation</DashboardCard>
+                <DashboardCard width={33.33}>Tasks</DashboardCard>
+                <DashboardCard width={33.33}>
                     <div
                         className="d-flex justify-content-center align-items-start"
                         style={{ height: "100%" }}
@@ -20,7 +21,6 @@ function Dashboard() {
                         <PomoTimer />
                     </div>
                 </DashboardCard>
-                <DashboardCard width={75}>Tasks</DashboardCard>
             </DashboardRow>
         </div>
     );
