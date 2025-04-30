@@ -43,12 +43,12 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={user ? <Dashboard /> : <Navigate to="/login" />}
+            element={!user ? <Dashboard /> : <Navigate to="/login" />}
           />
           <Route path="/pomodoro" element={<PomoTimerPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/logout" element={<p>LOGOUT NOT IMPLEMENTED</p>} />
+          <Route path="/logout" element={<Login />} />
         </Routes>
       </main>
     </div>
