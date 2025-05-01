@@ -1,47 +1,92 @@
 .custom-navbar {
-    background-color: #000000;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #000;
+  /*
+    incase u wanna customize some sizing
+  */
+  padding: 0.9rem 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
 }
 
 .custom-navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.custom-navbar-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 .custom-navbar-links {
-    display: flex;
-    gap: 2rem;
+  display: flex;
+  gap: 2rem;
 }
 
 .custom-nav-link {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.2s;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.2s;
 }
 
 .custom-nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 768px) {
-    .custom-navbar {
-        padding: 1rem;
-    }
+  /*
+  incase u wanna customize the size
+  */
+  .custom-navbar {
+    padding: 0.5rem;
+  }
+  .custom-navbar-brand {
+    font-size: 1.4rem;
+  }
+  .custom-navbar-toggle {
+    display: block;
+  }
+  .custom-navbar-toggle {
+    font-size: 1.3rem;
+  }
 
-    .custom-navbar-brand {
-        font-size: 1.2rem;
-    }
+  /*
+    safe not to touch from here  
+  */
+  .custom-navbar-links {
+    flex-direction: column;
+    position: absolute;
+    gap: 0;
+    top: 100%;
+    right: 0;
+    background-color: #000;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease;
+  }
 
-    .custom-navbar-links {
-        gap: 1rem;
-    }
+  .custom-navbar-links.open {
+    max-height: 800px;
+  }
 
-    .custom-nav-link {
-        padding: 0.5rem;
-    }
+  .custom-nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.7rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
 }
