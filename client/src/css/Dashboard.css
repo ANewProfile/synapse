@@ -22,7 +22,6 @@
     flex-wrap: wrap;
     width: 100%;
     min-height: 200px;
-    flex: 1;
     gap: 1rem;
 }
 
