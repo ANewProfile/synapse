@@ -19,10 +19,10 @@ const KanbanTasks = () => {
 
   const taskAdd = () => {
     if (!newTask.trim()) return;
-    setNewTask([
+    setTasks([
       {
         id: Date.now(),
-        text: input.trim(),
+        text: newTask.trim(),
         status: "Incompleted",
       },
     ]);
@@ -86,7 +86,37 @@ const KanbanTasks = () => {
 
         <div className="row">
           {statuses.map((status) => (
-            <div className="col-md-4" key={status}></div>
+            <div className="col-md-4" key={status}>
+              <h5 className="text-center">{status}</h5>
+              <div className="bg-light p-3 rounded shadow-sm min-vh-50">
+                {tasks
+                  .filter((t) => t.status === status)
+                  .map((task) => (
+                    <div className="card mb-2" key={task.id}>
+                      <span>{task.text}</span>
+                      <div className="btn-group">
+                        {status !== "Incompleted" && (
+                          <button className="btn btn-outline-secondary btn-sm">
+                            ←
+                          </button>
+                        )}
+                        {status !== "Finished" && (
+                          <div className="btn btn-outline-secondary btn-sm">
+                            →
+                          </div>
+                        )}
+
+                        <button
+                          className="btn btn-outline-danger btn-sm"
+                          onClick={() => taskRemove(task.id)}
+                        >
+                          ✕
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
