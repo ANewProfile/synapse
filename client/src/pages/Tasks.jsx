@@ -25,7 +25,9 @@ const KanbanTasks = () => {
         text: newTask.trim(),
         status: "Incompleted",
       },
+      ...tasks,
     ]);
+    setNewTask("");
   };
 
   const taskRemove = (id) => {
@@ -83,25 +85,43 @@ const KanbanTasks = () => {
         <button className="btn btn-primary" onClick={taskAdd}>
           Add Task
         </button>
+      </div>
 
-        <div className="row">
-          {statuses.map((status) => (
-            <div className="col-md-4" key={status}>
-              <h5 className="text-center">{status}</h5>
-              <div className="bg-light p-3 rounded shadow-sm min-vh-50">
-                {tasks
-                  .filter((t) => t.status === status)
-                  .map((task) => (
-                    <div className="card mb-2" key={task.id}>
-                      <span>{task.text}</span>
+      <div className="row">
+        {statuses.map((status) => (
+          <div className="col-md-4" key={status}>
+            <h5 className="text-center">{status}</h5>
+            <div className="bg-light p-1  rounded shadow-sm min-vh-50">
+              {tasks
+                .filter((t) => t.status === status)
+                .map((task) => (
+                  <div className="card " key={task.id}>
+                    <div
+                      className="
+                    card-body d-flex justify-content-between align-items-center
+                    "
+                    >
+                      <span
+                        style={{
+                          textAlign: "center",
+                        }}
+                      >
+                        {task.text}
+                      </span>
                       <div className="btn-group">
                         {status !== "Incompleted" && (
-                          <button className="btn btn-outline-secondary btn-sm">
+                          <button
+                            className="btn btn-outline-secondary btn-sm"
+                            onClick={() => taskMove(task.id, -1)}
+                          >
                             ←
                           </button>
                         )}
                         {status !== "Finished" && (
-                          <div className="btn btn-outline-secondary btn-sm">
+                          <div
+                            className="btn btn-outline-secondary btn-sm"
+                            onClick={() => taskMove(task.id, +1)}
+                          >
                             →
                           </div>
                         )}
@@ -114,11 +134,11 @@ const KanbanTasks = () => {
                         </button>
                       </div>
                     </div>
-                  ))}
-              </div>
+                  </div>
+                ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );
