@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Tasks from "./pages/Tasks";
 import PomoTimerPage from "./pages/PomoTimerPage";
 import { Routes, Route, Navigate } from "react-router-dom";
 import "./css/App.css";
