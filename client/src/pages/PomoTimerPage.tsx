@@ -46,7 +46,7 @@ function PomoTimerPage() {
                     />
                 </div>
                 <div className="w-auto">
-                    <button type="submit" className="btn btn-primary">
+                    <button type="submit" className="btn btn-primary w-full">
                         Update
                     </button>
                 </div>
