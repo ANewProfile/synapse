@@ -19,12 +19,12 @@ function PomoTimerPage() {
     }, []);
 
     return (
-        <div className="d-flex flex-column justify-content-center align-items-center gap-5">
+        <div className="flex flex-col justify-center items-center gap-12">
             <form
                 onSubmit={handleSubmit}
-                className="row g-2 align-items-end mb-4"
+                className="grid gap-2 auto-cols-auto items-end mb-4"
             >
-                <div className="col-auto">
+                <div className="w-auto">
                     <label>Work Time</label>
                     <input
                         type="text"
@@ -35,7 +35,7 @@ function PomoTimerPage() {
                     />
                 </div>
 
-                <div className="col-auto">
+                <div className="w-auto">
                     <label>Break Time</label>
                     <input
                         type="text"
@@ -45,7 +45,7 @@ function PomoTimerPage() {
                         onChange={(e) => setNewBreakTime(+e.target.value)}
                     />
                 </div>
-                <div className="col-auto">
+                <div className="w-auto">
                     <button type="submit" className="btn btn-primary">
                         Update
                     </button>

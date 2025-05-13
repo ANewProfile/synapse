@@ -14,10 +14,7 @@ function Dashboard() {
                 <DashboardCard width={33.33}>Motivation</DashboardCard>
                 <DashboardCard width={33.33}>Tasks</DashboardCard>
                 <DashboardCard width={33.33}>
-                    <div
-                        className="d-flex justify-content-center align-items-start"
-                        style={{ height: "100%" }}
-                    >
+                    <div className="flex justify-center items-start h-full">
                         <PomoTimer />
                     </div>
                 </DashboardCard>
