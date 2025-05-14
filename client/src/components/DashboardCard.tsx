@@ -3,10 +3,15 @@ import "../css/DashboardCard.css";
 
 interface DashboardCardProps {
     children: ReactNode;
+    className?: string;
     width: "12-5" | 25 | 33.33 | 50 | 66.66 | 75; // in percentage, these are the only options accepted
 }
 
-function DashboardCard({ children, width }: DashboardCardProps) {
+function DashboardCard({
+    children,
+    width,
+    className = "",
+}: DashboardCardProps) {
     // Handle special cases for decimal width values
     let widthClass;
     if (width === "12-5") {
@@ -18,7 +23,11 @@ function DashboardCard({ children, width }: DashboardCardProps) {
     } else {
         widthClass = `w-${width}`;
     }
-    return <div className={`dashboard-card ${widthClass}`}>{children}</div>;
+    return (
+        <div className={`dashboard-card ${widthClass} ${className}`}>
+            {children}
+        </div>
+    );
 }
 
 export default DashboardCard;
