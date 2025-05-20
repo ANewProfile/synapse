@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "../css/base.css";
 
 interface PomoTimerProps {
     workTime?: number;
@@ -42,14 +43,11 @@ function PomoTimer({ workTime = 1500, breakTime = 300 }: PomoTimerProps) {
     }
 
     return (
-        <div
-            className="d-flex flex-column justify-content-center align-items-center text-center"
-            style={{ height: "100%" }}
-        >
+        <div className="flex flex-col justify-center items-center text-center h-full">
             <h1 className="mb-2">{isWork ? "Work" : "Break"}</h1>
             <div style={{ fontSize: "4rem" }}>{format(secondsLeft)}</div>
-            <div className="mt-3">
-                <button onClick={startPause} className="btn btn-primary me-3">
+            <div className="mt-3 flex gap-4">
+                <button onClick={startPause} className="btn btn-primary">
                     {isRunning ? "Pause" : "Play"}
                 </button>
                 <button onClick={reset} className="btn btn-secondary">
