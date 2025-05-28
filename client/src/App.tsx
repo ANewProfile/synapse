@@ -38,7 +38,7 @@ function App() {
     return (
         <div className="d-flex flex-column">
             <Navbar />{" "}
-            <main className="main-content flex-grow-1 d-flex flex-column">
+            <main className="main-content flex-grow flex flex-col">
                 {/**this part needs to be responsive on phone max col for grid 2  */}
                 <Routes>
                     <Route
